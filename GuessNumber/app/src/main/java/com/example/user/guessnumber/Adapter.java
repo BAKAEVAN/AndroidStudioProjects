@@ -1,16 +1,17 @@
 package com.example.user.guessnumber;
 
-import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 /**
- * Created by User on 2017/4/5.
+ * Created by B10409038 on 2017/4/5.
  */
 
 public class Adapter extends
@@ -30,9 +31,13 @@ public class Adapter extends
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTxt;
         public View rootView;
+        public CardView mcard;
+        public RelativeLayout mrelative;
 
         public ViewHolder(View view) {
             super(view);
+            mcard=(CardView)itemView.findViewById(R.id.card_view);
+            mrelative=(RelativeLayout)itemView.findViewById(R.id.relative);
             mTxt = (TextView) itemView.findViewById(R.id.item_number);
             rootView = view;
         }
@@ -49,12 +54,15 @@ public class Adapter extends
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mTxt.setText(String.valueOf(position + 1));
-        if (status[position] == 0)
-            holder.itemView.setBackgroundColor(Color.WHITE);
-        else if (status[position] == 1)
-            holder.itemView.setBackgroundColor(Color.GRAY);
-        else if (status[position] == 2)
-            holder.itemView.setBackgroundColor(Color.RED);
+        if (status[position] == 0) {
+            holder.mrelative.setBackgroundColor(Color.WHITE);
+        }
+        else if (status[position] == 1) {
+            holder.mrelative.setBackgroundColor(Color.GRAY);
+        }
+        else if (status[position] == 2) {
+            holder.mrelative.setBackgroundColor(Color.RED);
+        }
     }
 
     @Override

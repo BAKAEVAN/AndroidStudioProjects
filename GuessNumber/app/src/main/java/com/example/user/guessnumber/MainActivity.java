@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+/**
+ * Created by B10409038 on 2017/4/5.
+ */
 
 public class MainActivity extends AppCompatActivity {
     private int NUM_LIST_ITEMS;
